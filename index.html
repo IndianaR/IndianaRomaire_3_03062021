@@ -3,11 +3,11 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/sass/style.css" />
         <link rel="stylesheet" media="screen and (max-width: 600px)" href="styles/style_max600.css" />
         <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 800px)" href="styles/style_600_800.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-        <style>@import url('https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap');</style>
+        <style>@import url('https://fonts.googleapis.com/css2?family=Shrikhand&display=swap');</style>
         <title>ohmyfood</title>
     </head>
     
@@ -20,24 +20,67 @@
         <main>
             <div class="intro">
                 <div class="intro__lieu">
-                    <!-- add the map_marker-->
+                    <i class="fas fa-map-marker-alt fa-xs">
                     <p>Paris, Belleville</p>
                 </div>
                 <div class="intro__description">
-                    <h1>Réserver le menu qui vous convient</h1>
+                    <h1 class="intro__description--title">Réserver le menu qui vous convient</h1>
                     <p>Découvrez des restaurants d'exception, sélectionnés par nos soins.</p>
                 </div>
-                <button class="intro__button" type="button">Explorez nos restaurants</button>
+                <button class="button button--intro" type="button">Explorez nos restaurants</button>
             </div>
 
             <aside>
-                <h2>Fonctionnement</h2>
+                <h2 class="aside__title">Fonctionnement</h2>
                 <nav class="aside__navigation">
-                    <ul>
-                        <li>Choississez un restaurant</li>
-                        <li>Composez votre menu</li>
-                        <li>Dégustez au restaurant</li>
-                    </ul>
+                    <ol>
+                        <li><i class="fas fa-mobile-alt"></i>Choississez un restaurant</li>
+                        <li><i class="fas fa-list-ul"></i>Composez votre menu</li>
+                        <li><i class="fas fa-store"></i>Dégustez au restaurant</li>
+                    </ol>
                 </nav>
             </aside>
+
+            <div class="restaurants">
+                <h2 class="restaurants__title">Restaurants</h2>  <!--restaurant_caption to use the same font settings for all of the restau blocks-->
+                <div class="restaurant_caption restaurants__palette">
+                    <img src="images/la_palette_du_gout.jpg" alt="restaurant_la_palette_du_gout"/>
+                    <p class="new restaurants__palette--new">Nouveau</p>
+                    <p>La palette du goût</p> <!--maybe i should add a class here, unless it works with nth child-->
+                    <p>Ménilmontant</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="restaurant_caption restaurants__note">
+                    <img src="images/la_note_enchantée.jpg" alt="restaurant_la_note_enchantée"/>
+                    <p class="new restaurants__note--new">Nouveau</p>
+                    <p>La note enchantée</p> <!--maybe i should add a class here, unless it works with nth child-->
+                    <p>Charonne</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="restaurant_caption restaurants__française">
+                    <img src="images/a_la_francaise.jpg" alt="restaurant_a_la_francaise"/>
+                    <p>A la française</p> <!--maybe i should add a class here, unless it works with nth child-->
+                    <p>Cité Rouge</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+                <div class="restaurant_caption restaurants__délice">
+                    <img src="images/delice_des_sens.jpg" alt="restaurant_le_delice_des_sens"/>
+                    <p>Le délice des sens</p> <!--maybe i should add a class here, unless it works with nth child-->
+                    <p>Folie Méricourt</p>
+                    <i class="fas fa-heart"></i>
+                </div>
+            </div>
         </main>
+
+        <footer>
+            <p><em>ohmyfood</em></p>
+            <ul class="footer__nav">
+                <li><a href=""></a><i class="fas fa-utensils"></i>Proposer un restaurant</a></li>
+                <li><a href=""></a><i class="fas fa-hands-helping"></i>Devenir partenaire</a></li>
+                <li><a href=""></a>Mentions légales</a></li>
+                <li><a href="mailto:indiana_romaire@yahoo.fr">Contact</a></li>
+            </ul>
+            
+        </footer>
+    </body>
+</html>
