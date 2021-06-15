@@ -1,0 +1,9 @@
+footer{
+    @include flex-column;
+    align-items: flex-start;
+    .footer__nav{
+        list-style-type: none;
+        @include flex-column; 
+        padding-left:0;
+    }
+}
