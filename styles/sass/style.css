@@ -1,0 +1,89 @@
+/*variables: colors*/
+/*mixins for the buttons of the all the pages"*/
+button {
+  background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
+  background: linear-gradient(to bottom right, #FF79DA, #9356DC);
+  color: white;
+  font-size: 1em;
+  padding: 0.85em 1.5em;
+  border-style: none;
+  -webkit-box-shadow: 0 0.3em 10px lightgrey;
+          box-shadow: 0 0.3em 10px lightgrey;
+  border-radius: 35px;
+  -webkit-transition: background 3s;
+  transition: background 3s;
+  /*does not work*/
+}
+
+button:hover {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fface8), to(#ae80e5));
+  background: linear-gradient(to bottom right, #fface8, #ae80e5);
+  -webkit-box-shadow: 0em 0.5em 4px lightgrey;
+          box-shadow: 0em 0.5em 4px lightgrey;
+}
+
+.header--page1 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+header .header__arrow {
+  margin-left: 2em;
+}
+
+header img {
+  width: 50%;
+  margin: auto;
+  padding-top: 1rem;
+}
+
+footer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+footer .footer__nav {
+  list-style-type: none;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding-left: 0;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0;
+}
+
+footer {
+  border: 1px solid blue;
+}
+/*# sourceMappingURL=style.css.map */
