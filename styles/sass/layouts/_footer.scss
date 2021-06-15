@@ -1,0 +1,35 @@
+footer{
+    background:$color_footer;
+    @include flex-column;
+    align-items: flex-start;
+    padding-left:1rem;
+    .footer__nav{
+        list-style-type: none;
+        @include flex-column; 
+        padding-left:0;
+        color:white;
+        margin-top: 0;
+        li{
+            padding-bottom:0.3rem;
+            a{
+                align-items: center;
+                color:white;
+                text-decoration-line:none;
+                
+            }     
+                 
+            .fas{
+                color:white;
+                font-size:0.7rem;
+                margin-right:0.5rem;
+            }
+            .fa-hands-helping{
+                transform:rotate(-15deg);
+                font-size:0.6rem;
+                margin-right:0.6rem;
+            }
+
+        }
+        
+    }
+}
