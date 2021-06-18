@@ -1,0 +1,16 @@
+.header--page1{
+    display:flex;
+    justify-content: center;
+}
+header{
+    display:flex;
+    .header__arrow{
+        margin-left:2em;
+    }
+    img{
+        width:50%;
+        margin:auto;
+        padding-top:1rem;
+        padding-bottom:1rem;
+    }
+}
