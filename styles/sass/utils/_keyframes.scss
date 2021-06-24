@@ -1,6 +1,28 @@
-
 @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
-
+    0% { transform: rotate(0deg);z-index:3; }
+    100% { transform: rotate(360deg);visibility:visible;z-index:3;}
+}
+@keyframes hiddenspin{
+    0% {
+        opacity: 100%;
+    }
+    
+    99% {
+        opacity: 100%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}   
+@keyframes hiddenspin-bg{
+    0% {
+        opacity: 90%;
+    }
+    
+    99% {
+        opacity: 90%;
+    }
+    100% {
+        opacity: 0%;
+    }
+}  
