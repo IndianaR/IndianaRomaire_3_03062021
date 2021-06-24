@@ -9,12 +9,21 @@ em,.menu__name{
 em{
     color:white;
 }
-
+strong{
+    font-weight:bold;
+}
 p,h1,h2{
     font-family:Roboto;
     font-size:1.6rem;
 }
-
+.details p{
+    font-size:1.3rem;
+}
 h2{
     margin-left:1rem ;
+}
+.new{
+    color:$color_nouveau;
+    background-color:$color_tertiary;
+    font-weight:bold;
 }
