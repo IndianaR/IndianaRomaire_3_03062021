@@ -38,8 +38,10 @@ use the left and top margin set to  (- size)/2   */
     z-index:1;
 }
 
-
-
+.header_index{
+    display:flex;
+    justify-content:center;
+}
 
 main{
     @include flex-column;
@@ -115,25 +117,23 @@ main{
                 }
                 li:nth-child(3){background:$color-select;}
             }
-        }
-        
+        }    
     }
     .restaurants{
         background:$color-background;
-        display:flex;
-        flex-direction: column;
+        @include flex-column;
         gap:0.3rem;
 
         .restaurants__list{
             display:flex;
-            flex-direction: column;
+            flex-direction: row;
+            flex-wrap:wrap;
             gap:1rem;
             width:100%;
             padding-bottom:3rem;
                  
             .restaurant_caption{
-                display:flex;
-                flex-direction:column;
+                @include flex-column;
                 justify-content: space-between;
                 border-radius:15px;
                 background: white;
@@ -182,12 +182,13 @@ main{
                         -webkit-background-clip: text;
                         background-clip:text;
                         -webkit-text-fill-color: transparent;
-
                     }
                 }
             }
-   
+        
+            > * {
+                flex:1 1 33%;
+            }
         }
-      
     }
 }

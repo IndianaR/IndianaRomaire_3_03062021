@@ -3,8 +3,11 @@
     src:url("Font-Roboto/Roboto-Regular.ttf")
 }
 
-em,.menu__name{
+em,.menu__name,.menu__title{
     font-family:Shrikhand;
+}
+.menu__title{
+    font-size:1.7rem;
 }
 em{
     color:white;
@@ -27,3 +30,18 @@ h2{
     background-color:$color_tertiary;
     font-weight:bold;
 }
+.menu__subtitle,{
+    font-size:1.1rem;  
+}
+.options__name{
+    font-size:1.2rem;
+    font-weight:bold;
+}
+.asidesnprice p{
+    font-size:1rem;
+}
+
+.asidesnprice p:nth-child(2){
+    font-weight:bold;
+}
+

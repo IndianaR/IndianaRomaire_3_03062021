@@ -1,0 +1,44 @@
+@media screen and (min-width:768px)  /* tablet */
+{
+    main{
+        .intro{
+            padding-bottom: 2.5rem;
+            .intro__lieu{
+                .fa-xs{
+                    font-size:1rem;
+                }
+                p{
+                    font-size:1.3rem; /*to add to font scss*/
+                }
+            }
+        }
+        aside{
+            .aside__navigation{
+                ol{
+                    display:flex;
+                    justify-content: space-between;
+                    gap:1.3rem;
+
+                    li{
+                        gap:0.5rem;
+                        padding-top:1rem;
+                        padding-bottom:1rem;
+                        padding:1rem 1rem 1rem 0; 
+                    }
+                    li+li{
+                        margin-top:0;
+                    }
+                }
+            }
+        }
+        .restaurants{
+            .restaurants__list{
+                flex-direction: row;
+                flex-wrap: wrap;
+            }
+            .restaurants__list > * {
+                flex:1 1 33%;  /*should add it to the smartphone screen*/
+            }
+        }
+    }
+}

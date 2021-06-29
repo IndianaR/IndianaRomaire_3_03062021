@@ -1,3 +1,5 @@
+
+/*Animations for the spinner in index page*/
 @keyframes spin {
     0% { transform: rotate(0deg);z-index:3; }
     100% { transform: rotate(360deg);visibility:visible;z-index:3;}
@@ -26,3 +28,15 @@
         opacity: 0%;
     }
 }  
+
+/*Animations for the downwards appearing menus*/
+@keyframes appearance{
+    0%{
+    }
+    
+    100%{
+        visibility:visible;
+    }
+
+}
+/*Animations for sliding check on*/

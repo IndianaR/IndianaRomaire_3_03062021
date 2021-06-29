@@ -1,3 +1,24 @@
 button{
     @include button; 
 }
+
+/*heart button*/
+.fa-stack{
+    display:flex;
+    align-items: center;
+}
+.fa-heart-white{
+    font-size:1.5rem;
+    position:absolute;
+}
+.fa-inverse{
+    font-size:1.1rem;
+}
+.fa-heart:hover{
+    font-size:1.63rem;
+    background: -webkit-linear-gradient($color-primary, $color-secondary);
+    -webkit-background-clip: text;
+    background-clip:text;
+    -webkit-text-fill-color: transparent;
+
+}

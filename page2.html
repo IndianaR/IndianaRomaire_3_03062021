@@ -3,7 +3,7 @@
     <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="styles/style.css" />
+        <link rel="stylesheet" href="styles/sass/style.css" />
         <link rel="stylesheet" media="screen and (max-width: 600px)" href="styles/style_max600.css" />
         <link rel="stylesheet" media="screen and (min-width: 601px) and (max-width: 800px)" href="styles/style_600_800.css" />
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
@@ -12,8 +12,10 @@
     </head>
 
     <body>   	
-        <header>
-            <i class="header__arrow fas fa-arrow-left"></i>
+        <header class="header__menu">
+            <a href="index.html">
+                <i class="header__arrow fas fa-arrow-left"></i>
+            </a>
             <img src="images/ohmyfood.png" alt="logo"/>
         </header>
         <main>
@@ -23,15 +25,24 @@
             <div class="menu">
                 <div class="menu__name">
                     <h1 class="menu__title">La Palette du goût</h1>
-                    <i class="menu__heart fas fa-heart"></i>
+                    <span class="menu__heart fa-stack">
+                        <i class="far fa-heart fa-heart-white fa-stack-2x"></i>
+                        <i class="fas fa-heart fa-stack-1x fa-inverse"></i>
+                    </span>
                 </div>
-                <div class="menu__details">
+                <div class="menu__details menu__details--entrees">
                     <h2 class="menu__subtitle">ENTREES</h2>
                     <div class="menu__options">
-                        <p class="options__name">Fricassée d'escargot</p>
-                        <div class="asidesnprice">
-                            <p>Au piment d'espelette</p>
-                            <p>25€</p>
+                        <div class="menu__options--text">
+                            <p class="options__name">Fricassée d'escargot</p>
+                            <div class="asidesnprice">
+                                <p>Au piment d'espelette</p>
+                                <p>25€</p>
+                            </div>
+                        </div>
+                        <div class="check-stack">
+                            <i class="fas fa-check-circle fa-check-circle-white"></i>
+                            <i class="far fa-check-circle"></i>
                         </div>
                     </div>
                     <div class="menu__options">
@@ -40,27 +51,29 @@
                             <p>Et ses copeaux de truffe noire</p>
                             <p>35€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle "></i>
                     </div>
-                    <div class="menu__options menu__options--select">
-                        <div class="option__selected">
-                            <p class="options__name">Oeufs au plat</p>
-                            <div class="asidesnprice">
-                                <p>Assaisonnés à la truffe sur lit de...</p>
-                                <p>20€</p>
-                            </div>
+                    <div class="menu__options">
+                        <p class="options__name">Oeufs au plat</p>
+                        <div class="asidesnprice">
+                            <p>Assaisonnés à la truffe sur lit de caviar</p>
+                            <p>20€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
                         <i class="far fa-check-circle"></i>
                     </div>
                 </div>
-
-                <div class="menu__details">
+                <div class="menu__details menu__details--plats">
                     <h2 class="menu__subtitle">PLATS</h2>
                     <div class="menu__options">
                         <p class="options__name">Filet de boeuf aux herbes</p>
                         <div class="asidesnprice">
-                            <p>Accompagnée de sa ribambelle de légu...</p>
+                            <p>Accompagnée de sa ribambelle de légumes</p>
                             <p>40€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                     <div class="menu__options">
                         <p class="options__name">Parmentier de queue de boeuf</p>
@@ -68,6 +81,8 @@
                             <p>A la truffe noire sur sa purée de panais</p>
                             <p>35€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                     <div class="menu__options">
                         <p class="options__name">Filet de Turbot</p>
@@ -75,10 +90,11 @@
                             <p>Aux agrumes</p>
                             <p>44€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                 </div>
-
-                <div class="menu__details">
+                <div class="menu__details menu__details--desserts">
                     <h2 class="menu__subtitle">DESSERTS</h2>
                     <div class="menu__options">
                         <p class="options__name">Paris-Brest</p>
@@ -86,6 +102,8 @@
                             <p>Revisité</p>
                             <p>18€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                     <div class="menu__options">
                         <p class="options__name">Macaron au chocolat d'exception</p>
@@ -93,6 +111,8 @@
                             <p>Et à la glace de Madagascar</p>
                             <p>22€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                     <div class="menu__options">
                         <p class="options__name">Mousse au chocolat</p>
@@ -100,6 +120,8 @@
                             <p>Au piment d'espelette et à la truffe noire</p>
                             <p>23€</p>
                         </div>
+                        <i class="fas fa-check-circle fa-check-circle-white"></i>
+                        <i class="far fa-check-circle"></i>
                     </div>
                 </div>
             </div>
