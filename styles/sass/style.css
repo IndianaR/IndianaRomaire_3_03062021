@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*variables: colors*/
 @font-face {
   font-family: "Roboto";
@@ -150,6 +151,85 @@ h2 {
 }
 
 /*Animations for sliding check on*/
+@-webkit-keyframes translate-left {
+  0% {
+    -webkit-transform: translateX(9999px);
+            transform: translateX(9999px);
+    visibility: visible;
+  }
+  50% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    visibility: visible;
+  }
+}
+@keyframes translate-left {
+  0% {
+    -webkit-transform: translateX(9999px);
+            transform: translateX(9999px);
+    visibility: visible;
+  }
+  50% {
+    -webkit-transform: translateX(100px);
+            transform: translateX(100px);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes translate-left-price {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-225%);
+            transform: translateX(-225%);
+  }
+}
+
+@keyframes translate-left-price {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+  100% {
+    -webkit-transform: translateX(-225%);
+            transform: translateX(-225%);
+  }
+}
+
+/*Animations for rotating check on*/
+@-webkit-keyframes spin-check {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+@keyframes spin-check {
+  0% {
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
 button {
   background: -webkit-gradient(linear, left top, right bottom, from(#FF79DA), to(#9356DC));
   background: linear-gradient(to bottom right, #FF79DA, #9356DC);
@@ -200,17 +280,11 @@ button:hover {
   -webkit-text-fill-color: transparent;
 }
 
-header {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 header img {
+  display: block;
   width: 50%;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
@@ -227,6 +301,8 @@ header img {
   margin-left: 1.5em;
   font-size: 1.3em;
   padding-bottom: 0.4em;
+  position: absolute;
+  top: 0.9em;
 }
 
 footer {
@@ -402,6 +478,13 @@ main .intro .intro__description p {
   margin: 0.6rem 2.5rem 1.7rem 2.5rem;
 }
 
+main .intro .button--intro:hover {
+  background: -webkit-gradient(linear, left top, right bottom, from(#fface8), to(#ae80e5));
+  background: linear-gradient(to bottom right, #fface8, #ae80e5);
+  -webkit-box-shadow: 0em 0.5em 4px lightgrey;
+          box-shadow: 0em 0.5em 4px lightgrey;
+}
+
 main aside .aside__navigation ol {
   list-style: none;
   counter-reset: bullets;
@@ -565,6 +648,7 @@ main .restaurants .restaurants__list .restaurant_caption .details .fa-heart:hove
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  /*à améliorer avec ::after  */
 }
 
 main .restaurants .restaurants__list > * {
@@ -679,11 +763,14 @@ main .menu .menu__details .menu__options {
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
+  width: 100%;
   background: white;
   border-radius: 10px 10px 10px 10px;
-  padding-right: 1.2rem;
   -webkit-box-shadow: 0 0 9px 1px lightgray;
           box-shadow: 0 0 9px 1px lightgray;
+  cursor: pointer;
+  overflow: hidden;
+  white-space: nowrap;
 }
 
 main .menu .menu__details .menu__options .menu__options--text {
@@ -694,7 +781,12 @@ main .menu .menu__details .menu__options .menu__options--text {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 0.7rem 0 1rem 0.7rem;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  padding: 1.2rem 0 1.2rem 0.7rem;
+  width: 100%;
+  gap: 0.3rem;
 }
 
 main .menu .menu__details .menu__options .menu__options--text p {
@@ -710,36 +802,58 @@ main .menu .menu__details .menu__options .asidesnprice {
           justify-content: space-between;
 }
 
+main .menu .menu__details .menu__options .asidesnprice p:nth-child(1) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100%;
+}
+
+main .menu .menu__details .menu__options .asidesnprice p:nth-child(2) {
+  position: absolute;
+  right: 2.5rem;
+}
+
 main .menu .menu__details .menu__options .check-stack {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  min-width: 15%;
+  visibility: hidden;
 }
 
 main .menu .menu__details .menu__options .check-stack .fa-check-circle {
-  color: #99E2D0;
-  border: 0 solid #99E2D0;
-  border-radius: 0 10px 10px 0;
-  width: 15%;
-  text-align: center;
-  position: absolute;
-  height: 4.2rem;
-  -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-}
-
-main .menu .menu__details .menu__options .check-stack .fa-check-circle-white {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   color: white;
   background: #99E2D0;
+  border-radius: 0 10px 10px 0;
   text-align: center;
-  position: absolute;
+  -ms-flex-item-align: center;
+      align-self: center;
+  width: 100%;
+  height: 100%;
+}
+
+main .menu .menu__details .menu__options .check-stack .fa-check-circle::before {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
+  margin: auto;
+  font-size: 1.3rem;
+}
+
+main .menu .menu__details .menu__options:hover > .check-stack {
+  -webkit-animation: translate-left 1000ms forwards;
+          animation: translate-left 1000ms forwards;
+}
+
+main .menu .menu__details .menu__options:hover p:nth-child(2) {
+  -webkit-animation: translate-left-price 1000ms forwards 550ms;
+          animation: translate-left-price 1000ms forwards 550ms;
+}
+
+main .menu .menu__details .menu__options:hover .fa-check-circle::before {
+  -webkit-animation: spin-check 1000ms ease-in;
+          animation: spin-check 1000ms ease-in;
 }
 
 main .menu .menu__details--entrees {
@@ -755,6 +869,12 @@ main .menu .menu__details--plats {
 main .menu .menu__details--desserts {
   -webkit-animation: appearance 2s ease-out infinite 1900ms;
           animation: appearance 2s ease-out infinite 1900ms;
+}
+
+main .button--order {
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
 }
 
 @media screen and (min-width: 768px) {

@@ -64,45 +64,70 @@ main{
             .menu__options{
                 display:flex;
                 justify-content: space-between;
+                width:100%;
                 background:white;
                 border-radius:10px 10px 10px 10px;
-                padding-right:1.2rem;
                 box-shadow: 0 0 9px 1px lightgray;
+                cursor: pointer;
+                overflow:hidden;
+                white-space:nowrap;
                 .menu__options--text{
                     @include flex-column;
-                    padding:0.7rem 0 1rem 0.7rem;
+                    justify-content: space-between;
+                    padding:1.2rem 0 1.2rem 0.7rem;
+                    width:100%;
+                    gap:0.3rem;
                     p{
                         margin:0;
-                    }
+                    }                   
                 }
                 
                 .asidesnprice{
                     display:flex; 
                     justify-content: space-between;
-                }
-                .check-stack{
-                    display:flex;
-                    justify-content:center;
-
-                    .fa-check-circle{
-                        color:$color-tertiary;
-                        border:0 solid $color-tertiary;
-                        border-radius:0 10px 10px 0;
-                        width:15%;
-                        text-align:center;
-                        position:absolute;
-                        height: 4.2rem;
-                        align-self: center;
-                        
+                    
+                    p:nth-child(1){
+                        white-space:nowrap;
+                        overflow:hidden;
+                        text-overflow:ellipsis;
+                        width:100%;
                     }
-                    .fa-check-circle-white{
+                    p:nth-child(2){
+                        position:absolute;
+                        right:2.5rem;                                              
+                    }
+                }
+                    
+                .check-stack{
+                    min-width: 15%;
+                    visibility: hidden;
+                    .fa-check-circle{
+                        display:flex;
                         color:white;
                         background: $color-tertiary;
+                        border-radius:0 10px 10px 0;
                         text-align:center;
-                        position:absolute;
                         align-self: center;
+                        width:100%;
+                        height:100%;
+                        
                     }
+                    .fa-check-circle::before{
+                        align-self:center;
+                        margin:auto;
+                        font-size:1.3rem;                    
+                    }
+                    
                 }
+            }
+            .menu__options:hover > .check-stack{
+               animation:translate-left 1000ms forwards;
+            }
+            .menu__options:hover p:nth-child(2){
+                animation:translate-left-price 1000ms forwards 550ms; 
+            }
+            .menu__options:hover .fa-check-circle::before{
+               animation:spin-check 1000ms ease-in;
             }
         }
         .menu__details--entrees{
@@ -115,5 +140,11 @@ main{
             animation:appearance 2s ease-out infinite 1900ms;
         }
     }
+    .button--order{
+        margin-left:auto;
+        margin-right:auto;
+        width:50%;
+    }
 }
+
 
