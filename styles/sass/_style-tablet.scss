@@ -1,6 +1,12 @@
 @media screen and (min-width:768px)  /* tablet */
 {
+    .header__menu{
+        .header__arrow{
+        top:1.5em;
+        }       
+    }
     main{
+        
         .intro{
             padding-bottom: 2.5rem;
             .intro__lieu{
@@ -32,13 +38,22 @@
             }
         }
         .restaurants{
-            .restaurants__list{
-                flex-direction: row;
-                flex-wrap: wrap;
-            }
+            background:lightgreen;
             .restaurants__list > * {
                 flex:1 1 33%;  /*should add it to the smartphone screen*/
             }
+        }
+        .button--order{
+            width:21%;
+        }
+    }
+    footer{
+        padding-right:1rem;
+
+        .footer__nav{
+        flex-direction: row;
+        justify-content: space-between;
+        width:100%;
         }
     }
 }

@@ -532,7 +532,7 @@ main aside .aside__navigation ol li::before {
   margin-left: -0.8rem;
 }
 
-main aside .aside__navigation ol li:nth-child(3) {
+main aside .aside__navigation ol li:hover {
   background: #f5edff;
 }
 
@@ -590,7 +590,7 @@ main .restaurants .restaurants__list .restaurant_caption img {
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
-  max-width: 21.45rem;
+  max-width: 100%;
   max-height: 10.8rem;
   -o-object-position: 0 -3.5rem;
      object-position: 0 -3.5rem;
@@ -726,7 +726,18 @@ main .menu .menu__name .fa-heart:hover {
   -webkit-text-fill-color: transparent;
 }
 
-main .menu .menu__details {
+main .menu .menu__selection {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 1rem;
+}
+
+main .menu .menu__selection .menu__details {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -740,14 +751,14 @@ main .menu .menu__details {
   visibility: hidden;
 }
 
-main .menu .menu__details .menu__subtitle {
+main .menu .menu__selection .menu__details .menu__subtitle {
   margin: 0 0;
   margin-left: 0;
   padding-bottom: 0.6rem;
   position: relative;
 }
 
-main .menu .menu__details .menu__subtitle::before {
+main .menu .menu__selection .menu__details .menu__subtitle::before {
   content: "";
   position: absolute;
   left: 0;
@@ -756,7 +767,7 @@ main .menu .menu__details .menu__subtitle::before {
   border-bottom: 4px solid #99E2D0;
 }
 
-main .menu .menu__details .menu__options {
+main .menu .menu__selection .menu__details .menu__options {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -770,10 +781,9 @@ main .menu .menu__details .menu__options {
           box-shadow: 0 0 9px 1px lightgray;
   cursor: pointer;
   overflow: hidden;
-  white-space: nowrap;
 }
 
-main .menu .menu__details .menu__options .menu__options--text {
+main .menu .menu__selection .menu__details .menu__options .menu__options--text {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -787,39 +797,53 @@ main .menu .menu__details .menu__options .menu__options--text {
   padding: 1.2rem 0 1.2rem 0.7rem;
   width: 100%;
   gap: 0.3rem;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  -webkit-transition: width 1500ms;
+  transition: width 1500ms;
 }
 
-main .menu .menu__details .menu__options .menu__options--text p {
+main .menu .menu__selection .menu__details .menu__options .menu__options--text .options__name {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+main .menu .menu__selection .menu__details .menu__options .menu__options--text p {
   margin: 0;
 }
 
-main .menu .menu__details .menu__options .asidesnprice {
+main .menu .menu__selection .menu__details .menu__options .asidesnprice {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
-}
-
-main .menu .menu__details .menu__options .asidesnprice p:nth-child(1) {
-  white-space: nowrap;
   overflow: hidden;
-  text-overflow: ellipsis;
   width: 100%;
 }
 
-main .menu .menu__details .menu__options .asidesnprice p:nth-child(2) {
-  position: absolute;
-  right: 2.5rem;
+main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-child(1) {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-width: 100%;
 }
 
-main .menu .menu__details .menu__options .check-stack {
-  min-width: 15%;
+main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-child(2) {
+  position: absolute;
+  right: 2.5rem;
+  -webkit-transition: position 1000ms;
+  transition: position 1000ms;
+}
+
+main .menu .menu__selection .menu__details .menu__options .check-stack {
+  min-width: 20%;
   visibility: hidden;
 }
 
-main .menu .menu__details .menu__options .check-stack .fa-check-circle {
+main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check-circle {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -833,7 +857,7 @@ main .menu .menu__details .menu__options .check-stack .fa-check-circle {
   height: 100%;
 }
 
-main .menu .menu__details .menu__options .check-stack .fa-check-circle::before {
+main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check-circle::before {
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
       align-self: center;
@@ -841,32 +865,37 @@ main .menu .menu__details .menu__options .check-stack .fa-check-circle::before {
   font-size: 1.3rem;
 }
 
-main .menu .menu__details .menu__options:hover > .check-stack {
-  -webkit-animation: translate-left 1000ms forwards;
-          animation: translate-left 1000ms forwards;
+main .menu .menu__selection .menu__details .menu__options:hover > .check-stack {
+  -webkit-animation: translate-left 1000ms both;
+          animation: translate-left 1000ms both;
 }
 
-main .menu .menu__details .menu__options:hover p:nth-child(2) {
-  -webkit-animation: translate-left-price 1000ms forwards 550ms;
-          animation: translate-left-price 1000ms forwards 550ms;
+main .menu .menu__selection .menu__details .menu__options:hover p:nth-child(2) {
+  -webkit-animation: translate-left-price 900ms both 500ms;
+          animation: translate-left-price 900ms both 500ms;
+  position: unset 1000ms;
 }
 
-main .menu .menu__details .menu__options:hover .fa-check-circle::before {
+main .menu .menu__selection .menu__details .menu__options:hover .fa-check-circle::before {
   -webkit-animation: spin-check 1000ms ease-in;
           animation: spin-check 1000ms ease-in;
 }
 
-main .menu .menu__details--entrees {
+main .menu .menu__selection .menu__details .menu__options:hover > .menu__options--text {
+  width: 65%;
+}
+
+main .menu .menu__selection .menu__details--entrees {
   -webkit-animation: appearance 2s ease-out infinite 400ms;
           animation: appearance 2s ease-out infinite 400ms;
 }
 
-main .menu .menu__details--plats {
+main .menu .menu__selection .menu__details--plats {
   -webkit-animation: appearance 2s ease-out infinite 1500ms;
           animation: appearance 2s ease-out infinite 1500ms;
 }
 
-main .menu .menu__details--desserts {
+main .menu .menu__selection .menu__details--desserts {
   -webkit-animation: appearance 2s ease-out infinite 1900ms;
           animation: appearance 2s ease-out infinite 1900ms;
 }
@@ -878,6 +907,9 @@ main .button--order {
 }
 
 @media screen and (min-width: 768px) {
+  .header__menu .header__arrow {
+    top: 1.5em;
+  }
   main .intro {
     padding-bottom: 2.5rem;
   }
@@ -906,19 +938,55 @@ main .button--order {
   main aside .aside__navigation ol li + li {
     margin-top: 0;
   }
-  main .restaurants .restaurants__list {
-    -webkit-box-orient: horizontal;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-            flex-direction: row;
-    -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
+  main .restaurants {
+    background: lightgreen;
   }
   main .restaurants .restaurants__list > * {
     -webkit-box-flex: 1;
         -ms-flex: 1 1 33%;
             flex: 1 1 33%;
     /*should add it to the smartphone screen*/
+  }
+  main .button--order {
+    width: 21%;
+  }
+  footer {
+    padding-right: 1rem;
+  }
+  footer .footer__nav {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  main .menu .menu__selection {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-pack: justify;
+        -ms-flex-pack: justify;
+            justify-content: space-between;
+  }
+  main .menu .menu__selection .menu__options {
+    min-width: 17.5rem;
+  }
+  main .menu .menu__selection .menu__options .asidesnprice {
+    position: relative;
+  }
+  main .menu .menu__selection .menu__options .asidesnprice p:nth-child(2) {
+    position: absolute;
+    right: 0.5rem;
+  }
+  main .button--order {
+    width: 21%;
   }
 }
 /*# sourceMappingURL=style.css.map */
