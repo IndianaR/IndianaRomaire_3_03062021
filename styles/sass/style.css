@@ -153,13 +153,8 @@ h2 {
 /*Animations for sliding check on*/
 @-webkit-keyframes translate-left {
   0% {
-    -webkit-transform: translateX(9999px);
-            transform: translateX(9999px);
-    visibility: visible;
-  }
-  50% {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
+    -webkit-transform: translateX(4.5rem);
+            transform: translateX(4.5rem);
     visibility: visible;
   }
   100% {
@@ -170,13 +165,8 @@ h2 {
 }
 @keyframes translate-left {
   0% {
-    -webkit-transform: translateX(9999px);
-            transform: translateX(9999px);
-    visibility: visible;
-  }
-  50% {
-    -webkit-transform: translateX(100px);
-            transform: translateX(100px);
+    -webkit-transform: translateX(4.5rem);
+            transform: translateX(4.5rem);
     visibility: visible;
   }
   100% {
@@ -192,8 +182,8 @@ h2 {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-225%);
-            transform: translateX(-225%);
+    -webkit-transform: translateX(-4.5rem);
+            transform: translateX(-4.5rem);
   }
 }
 
@@ -203,8 +193,8 @@ h2 {
             transform: translateX(0);
   }
   100% {
-    -webkit-transform: translateX(-225%);
-            transform: translateX(-225%);
+    -webkit-transform: translateX(-4.5rem);
+            transform: translateX(-4.5rem);
   }
 }
 
@@ -807,6 +797,7 @@ main .menu .menu__selection .menu__details .menu__options .menu__options--text .
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-right: 0.5rem;
 }
 
 main .menu .menu__selection .menu__details .menu__options .menu__options--text p {
@@ -829,17 +820,18 @@ main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-ch
   overflow: hidden;
   text-overflow: ellipsis;
   max-width: 100%;
+  margin-right: 0.5rem;
 }
 
 main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-child(2) {
   position: absolute;
   right: 2.5rem;
-  -webkit-transition: position 1000ms;
-  transition: position 1000ms;
+  -webkit-transition: position 0ms;
+  transition: position 0ms;
 }
 
 main .menu .menu__selection .menu__details .menu__options .check-stack {
-  min-width: 20%;
+  width: 4.5rem;
   visibility: hidden;
 }
 
@@ -866,19 +858,19 @@ main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover > .check-stack {
-  -webkit-animation: translate-left 1000ms both;
-          animation: translate-left 1000ms both;
+  -webkit-animation: translate-left 1000ms both 200ms;
+          animation: translate-left 1000ms both 200ms;
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover p:nth-child(2) {
-  -webkit-animation: translate-left-price 900ms both 500ms;
-          animation: translate-left-price 900ms both 500ms;
+  -webkit-animation: translate-left-price 1000ms both 200ms;
+          animation: translate-left-price 1000ms both 200ms;
   position: unset 1000ms;
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover .fa-check-circle::before {
-  -webkit-animation: spin-check 1000ms ease-in;
-          animation: spin-check 1000ms ease-in;
+  -webkit-animation: spin-check 1000ms ease-in 250ms;
+          animation: spin-check 1000ms ease-in 250ms;
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover > .menu__options--text {

@@ -88,6 +88,7 @@ main{
                             white-space:nowrap;
                             overflow:hidden;
                             text-overflow:ellipsis;
+                            margin-right:0.5rem;
                         }
                         p{
                             margin:0;
@@ -105,16 +106,17 @@ main{
                             overflow:hidden;
                             text-overflow:ellipsis;
                             max-width:100%;
+                            margin-right:0.5rem;
                         }
                         p:nth-child(2){
                             position:absolute;
                             right:2.5rem; 
-                            transition:position 1000ms;                                             
+                            transition:position 0ms;                                             
                         }
                     }
                         
                     .check-stack{
-                        min-width: 20%;
+                        width: 4.5rem;
                         visibility: hidden;
                         .fa-check-circle{
                             display:flex;
@@ -131,19 +133,18 @@ main{
                             align-self:center;
                             margin:auto;
                             font-size:1.3rem;                    
-                        }
-                        
+                        }                        
                     }
                 }
                 .menu__options:hover > .check-stack{
-                animation:translate-left 1000ms both;
+                animation:translate-left 1000ms both 200ms;
                 }
                 .menu__options:hover p:nth-child(2){
-                    animation:translate-left-price 900ms both 500ms;
+                    animation:translate-left-price 1000ms both 200ms;
                     position: unset 1000ms; 
                 }
                 .menu__options:hover .fa-check-circle::before{
-                animation:spin-check 1000ms ease-in;
+                animation:spin-check 1000ms ease-in 250ms;
                 }
                 .menu__options:hover > .menu__options--text{
                     width:65%;
