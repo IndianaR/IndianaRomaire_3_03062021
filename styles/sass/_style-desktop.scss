@@ -1,20 +1,31 @@
 @media screen and (min-width:1000px)  /* desktop */
 {
     main{
+        li{
+            font-size:1.2rem;
+        }
+        .picture img{
+            height:22rem;
+        }
+
         .menu{
             .menu__selection{
                 flex-direction: row;
                 justify-content: space-between;
-                .menu__options{
-                    min-width:17.5rem;
-                    .asidesnprice{
+                .menu__details{
+                    width:30%;  
+                    .menu__options{
+                        min-width:17.5rem;
                         position:relative;
-                        p:nth-child(2){
-                            position:absolute;
-                            right:0.5rem;
+                        .asidesnprice{
+                            p:nth-child(2){
+                                position:absolute;
+                                right:1rem;
+                            }
                         }
                     }
                 }
+                
             }
             
         }

@@ -137,7 +137,6 @@ main{
                         }                        
                     }
                 }
-                /*Animations to move the checkbox*/
                 .menu__options:hover > .check-stack{
                 animation:translate-left 1000ms both 200ms;
                 }
@@ -152,7 +151,6 @@ main{
                     width:65%;
                 }
             }
-            /*Animations for the menu appearance*/
             .menu__details--entrees{
                 animation:appearance 2s ease-out infinite 400ms;
             }

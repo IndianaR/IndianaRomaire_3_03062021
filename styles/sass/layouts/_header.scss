@@ -9,6 +9,7 @@ header{
     }
 }
 .header__menu{
+    position:relative;
     gap:8.1rem;
     a:visited{
         color:black
@@ -16,8 +17,8 @@ header{
     .header__arrow{
         margin-left:1.5em;
         font-size:1.3em;
-        padding-bottom:0.4em;
         position:absolute;
-        top:0.9em;
+        top:50%;
+        transform:translateY(-50%);
     }
 }
