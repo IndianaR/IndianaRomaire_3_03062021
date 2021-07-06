@@ -21,8 +21,11 @@ strong {
   font-weight: bold;
 }
 
-p, h1, h2 {
+li, p, h1, h2 {
   font-family: Roboto;
+}
+
+p, h1, h2 {
   font-size: 1.6rem;
 }
 
@@ -63,26 +66,26 @@ h2 {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    z-index: 3;
+    z-index: 1;
   }
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
     visibility: visible;
-    z-index: 3;
+    z-index: -1000;
   }
 }
 @keyframes spin {
   0% {
     -webkit-transform: rotate(0deg);
             transform: rotate(0deg);
-    z-index: 3;
+    z-index: 1;
   }
   100% {
     -webkit-transform: rotate(360deg);
             transform: rotate(360deg);
     visibility: visible;
-    z-index: 3;
+    z-index: -1000;
   }
 }
 
@@ -113,24 +116,52 @@ h2 {
 @-webkit-keyframes hiddenspin-bg {
   0% {
     opacity: 90%;
+    width: 100%;
   }
   99% {
     opacity: 90%;
   }
   100% {
     opacity: 0%;
+    width: 100%;
   }
 }
 
 @keyframes hiddenspin-bg {
   0% {
     opacity: 90%;
+    width: 100%;
   }
   99% {
     opacity: 90%;
   }
   100% {
     opacity: 0%;
+    width: 100%;
+  }
+}
+
+@-webkit-keyframes down-spinner {
+  0% {
+    z-index: 1;
+  }
+  99% {
+    z-index: 1;
+  }
+  100% {
+    z-index: -9999;
+  }
+}
+
+@keyframes down-spinner {
+  0% {
+    z-index: 1;
+  }
+  99% {
+    z-index: 1;
+  }
+  100% {
+    z-index: -9999;
   }
 }
 
@@ -195,6 +226,54 @@ h2 {
   100% {
     -webkit-transform: translateX(-4.5rem);
             transform: translateX(-4.5rem);
+  }
+}
+
+/*Animations for disappearing sliding check on ---  usefull to avoid the animation to dispappear in 1 go*/
+@-webkit-keyframes translate-left-reverse {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(4.5rem);
+            transform: translateX(4.5rem);
+    visibility: visible;
+  }
+}
+@keyframes translate-left-reverse {
+  0% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+    visibility: visible;
+  }
+  100% {
+    -webkit-transform: translateX(4.5rem);
+            transform: translateX(4.5rem);
+    visibility: visible;
+  }
+}
+
+@-webkit-keyframes translate-left-price-reverse {
+  0% {
+    -webkit-transform: translateX(-4.5rem);
+            transform: translateX(-4.5rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
+  }
+}
+
+@keyframes translate-left-price-reverse {
+  0% {
+    -webkit-transform: translateX(-4.5rem);
+            transform: translateX(-4.5rem);
+  }
+  100% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0);
   }
 }
 
@@ -366,36 +445,43 @@ body {
 /*footer{
     border:1px solid blue;
 }*/
-.spinner {
+body {
+  position: relative;
+}
+
+body .spinner {
   width: 100%;
   height: 100%;
   position: absolute;
   visibility: hidden;
+  z-index: -9999;
+  -webkit-animation: down-spinner  3000ms forwards;
+          animation: down-spinner  3000ms forwards;
 }
 
-.spinner::before {
+body .spinner::before {
   content: "";
-  width: 100%;
   height: 100%;
+  width: 0;
   overflow: hidden;
   background: #f6f6f6;
   opacity: 0.9;
   position: fixed;
   visibility: visible;
-  -webkit-animation: hiddenspin-bg 3s forwards;
-          animation: hiddenspin-bg 3s forwards;
+  -webkit-animation: hiddenspin-bg 3000ms forwards;
+          animation: hiddenspin-bg 3000ms forwards;
+  z-index: -9999;
 }
 
-.spinner::after {
+body .spinner::after {
   content: "";
   width: 10rem;
   height: 10rem;
-  z-index: 3;
   position: fixed;
   text-align: center;
   /*to center the spinner, top and left 
-set to 50% works only from the top. We need to
-use the left and top margin set to  (- size)/2   */
+    set to 50% works only from the top. We need to
+    use the left and top margin set to  (- size)/2   */
   top: 50%;
   left: 50%;
   margin-top: -5rem;
@@ -404,9 +490,9 @@ use the left and top margin set to  (- size)/2   */
   border-top: 15px solid #9356DC;
   border-bottom: 15px solid #9356DC;
   border-radius: 50%;
-  -webkit-animation: spin 3s ease,hiddenspin 3s forwards;
-          animation: spin 3s ease,hiddenspin 3s forwards;
   z-index: 1;
+  -webkit-animation: spin 3000ms ease forwards,hiddenspin 3000ms forwards;
+          animation: spin 3000ms ease forwards,hiddenspin 3000ms forwards;
 }
 
 .header_index {
@@ -526,6 +612,10 @@ main aside .aside__navigation ol li::before {
 
 main aside .aside__navigation ol li:hover {
   background: #f5edff;
+}
+
+main aside .aside__navigation ol li:hover > .fas {
+  color: #9356DC;
 }
 
 main .restaurants {
@@ -833,11 +923,15 @@ main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-ch
   right: 2.5rem;
   -webkit-transition: position 0ms;
   transition: position 0ms;
+  -webkit-animation: translate-left-price-reverse 1000ms ease-out 200ms both;
+          animation: translate-left-price-reverse 1000ms ease-out 200ms both;
 }
 
 main .menu .menu__selection .menu__details .menu__options .check-stack {
   width: 4.5rem;
   visibility: hidden;
+  -webkit-animation: translate-left-reverse 1000ms ease-out 200ms both;
+          animation: translate-left-reverse 1000ms ease-out 200ms both;
 }
 
 main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check-circle {
@@ -863,13 +957,13 @@ main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover > .check-stack {
-  -webkit-animation: translate-left 1000ms both 200ms;
-          animation: translate-left 1000ms both 200ms;
+  -webkit-animation: translate-left 1000ms ease-out 200ms both;
+          animation: translate-left 1000ms ease-out 200ms both;
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover p:nth-child(2) {
-  -webkit-animation: translate-left-price 1000ms both 200ms;
-          animation: translate-left-price 1000ms both 200ms;
+  -webkit-animation: translate-left-price 1000ms ease-out 200ms both;
+          animation: translate-left-price 1000ms ease-out 200ms both;
   position: unset 1000ms;
 }
 

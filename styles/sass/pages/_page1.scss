@@ -1,43 +1,48 @@
-.spinner{
-    width:100%;
-    height:100%;   
-    position:absolute;
-    visibility:hidden;
-}
-.spinner::before{
-    content:"";
-    width:100%;
-    height:100%;
-    overflow: hidden;
-    background: $color-background;
-    opacity:0.9;
-    position:fixed;
-    visibility:visible;
-    animation:hiddenspin-bg 3s forwards;
-}
+body{
+    position:relative;
+    .spinner{
+        width:100%;
+        height:100%;   
+        position:absolute;
+        visibility:hidden;
+        z-index:-9999;
+        animation:down-spinner  3000ms forwards; 
+    }
+    .spinner::before{
+        content:"";
+        height:100%;
+        width:0;
+        overflow: hidden;
+        background: $color-background;
+        opacity:0.9;
+        position:fixed;
+        visibility:visible;
+        animation:hiddenspin-bg 3000ms forwards;
+        z-index:-9999;
+    }
 
-.spinner::after{
-    content:"";
-    width:10rem;
-    height:10rem;
-    z-index:3;
-    position: fixed;
-    text-align: center;
-/*to center the spinner, top and left 
-set to 50% works only from the top. We need to
-use the left and top margin set to  (- size)/2   */
-    top:50%;
-    left:50%;
-    margin-top: -5rem;
-    margin-left: -5rem;
-    border:15px solid $color-secondary;
-    border-top:15px solid $color-primary;
-    border-bottom:15px solid $color-primary;
-    border-radius:50%;
-    animation: spin 3s ease,hiddenspin 3s forwards;
-    z-index:1;
+    .spinner::after{
+        content:"";
+        width:10rem;
+        height:10rem;
+        position: fixed;
+        text-align: center;
+    /*to center the spinner, top and left 
+    set to 50% works only from the top. We need to
+    use the left and top margin set to  (- size)/2   */
+        top:50%;
+        left:50%;
+        margin-top: -5rem;
+        margin-left: -5rem;
+        border:15px solid $color-secondary;
+        border-top:15px solid $color-primary;
+        border-bottom:15px solid $color-primary;
+        border-radius:50%;
+        z-index:1;
+        animation: spin 3000ms ease forwards,hiddenspin 3000ms forwards;
+        
+    }
 }
-
 .header_index{
     display:flex;
     justify-content:center;
@@ -107,6 +112,7 @@ main{
                     .fa-list-ul{
                         margin-right:0.1rem;
                     }
+                    
                 }
                 li + li{
                     margin-top: 1.5rem;
@@ -120,6 +126,9 @@ main{
                     margin-left:-0.8rem;
                 }
                 li:hover{background:$color-select;}
+                li:hover > .fas{
+                    color:$color-primary;
+                }
             }
         }    
     }
