@@ -1,4 +1,3 @@
-@charset "UTF-8";
 /*variables: colors*/
 @font-face {
   font-family: "Roboto";
@@ -186,7 +185,7 @@ h2 {
   0% {
     -webkit-transform: translateX(4.5rem);
             transform: translateX(4.5rem);
-    visibility: visible;
+    visibility: hidden;
   }
   100% {
     -webkit-transform: translateX(0);
@@ -198,7 +197,7 @@ h2 {
   0% {
     -webkit-transform: translateX(4.5rem);
             transform: translateX(4.5rem);
-    visibility: visible;
+    visibility: hidden;
   }
   100% {
     -webkit-transform: translateX(0);
@@ -226,54 +225,6 @@ h2 {
   100% {
     -webkit-transform: translateX(-4.5rem);
             transform: translateX(-4.5rem);
-  }
-}
-
-/*Animations for disappearing sliding check on ---  usefull to avoid the animation to dispappear in 1 go*/
-@-webkit-keyframes translate-left-reverse {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translateX(4.5rem);
-            transform: translateX(4.5rem);
-    visibility: visible;
-  }
-}
-@keyframes translate-left-reverse {
-  0% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-    visibility: visible;
-  }
-  100% {
-    -webkit-transform: translateX(4.5rem);
-            transform: translateX(4.5rem);
-    visibility: visible;
-  }
-}
-
-@-webkit-keyframes translate-left-price-reverse {
-  0% {
-    -webkit-transform: translateX(-4.5rem);
-            transform: translateX(-4.5rem);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
-  }
-}
-
-@keyframes translate-left-price-reverse {
-  0% {
-    -webkit-transform: translateX(-4.5rem);
-            transform: translateX(-4.5rem);
-  }
-  100% {
-    -webkit-transform: translateX(0);
-            transform: translateX(0);
   }
 }
 
@@ -345,7 +296,6 @@ button:hover {
   font-size: 1.63rem;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -514,7 +464,6 @@ main {
           flex-direction: column;
   margin: 0;
   /*Fonctionnement*/
-  /*customize the bullets*/
 }
 
 main .intro {
@@ -561,6 +510,10 @@ main .intro .button--intro:hover {
   background: linear-gradient(to bottom right, #fface8, #ae80e5);
   -webkit-box-shadow: 0em 0.5em 4px lightgrey;
           box-shadow: 0em 0.5em 4px lightgrey;
+}
+
+main aside {
+  background: white;
 }
 
 main aside .aside__navigation ol {
@@ -672,7 +625,6 @@ main .restaurants .restaurants__list .restaurant_caption img {
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
-  max-width: 100%;
   max-height: 10.8rem;
   -o-object-position: 0 -3.5rem;
      object-position: 0 -3.5rem;
@@ -728,9 +680,7 @@ main .restaurants .restaurants__list .restaurant_caption .details .fa-heart:hove
   font-size: 1.63rem;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
-  /*à améliorer avec ::after  */
 }
 
 main .restaurants .restaurants__list > * {
@@ -805,7 +755,6 @@ main .menu .menu__name .fa-heart:hover {
   font-size: 1.6rem;
   background: -webkit-linear-gradient(#9356DC, #FF79DA);
   -webkit-background-clip: text;
-  background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
@@ -921,17 +870,22 @@ main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-ch
 main .menu .menu__selection .menu__details .menu__options .asidesnprice p:nth-child(2) {
   position: absolute;
   right: 2.5rem;
-  -webkit-transition: position 0ms;
-  transition: position 0ms;
-  -webkit-animation: translate-left-price-reverse 1000ms ease-out 200ms both;
-          animation: translate-left-price-reverse 1000ms ease-out 200ms both;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
+  -webkit-transition: -webkit-transform 1000ms ease-out;
+  transition: -webkit-transform 1000ms ease-out;
+  transition: transform 1000ms ease-out;
+  transition: transform 1000ms ease-out, -webkit-transform 1000ms ease-out;
 }
 
 main .menu .menu__selection .menu__details .menu__options .check-stack {
   width: 4.5rem;
-  visibility: hidden;
-  -webkit-animation: translate-left-reverse 1000ms ease-out 200ms both;
-          animation: translate-left-reverse 1000ms ease-out 200ms both;
+  -webkit-transform: translateX(4.5rem);
+          transform: translateX(4.5rem);
+  -webkit-transition: -webkit-transform 1000ms ease-out;
+  transition: -webkit-transform 1000ms ease-out;
+  transition: transform 1000ms ease-out;
+  transition: transform 1000ms ease-out, -webkit-transform 1000ms ease-out;
 }
 
 main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check-circle {
@@ -957,14 +911,14 @@ main .menu .menu__selection .menu__details .menu__options .check-stack .fa-check
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover > .check-stack {
-  -webkit-animation: translate-left 1000ms ease-out 200ms both;
-          animation: translate-left 1000ms ease-out 200ms both;
+  -webkit-transform: translateX(0);
+          transform: translateX(0);
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover p:nth-child(2) {
-  -webkit-animation: translate-left-price 1000ms ease-out 200ms both;
-          animation: translate-left-price 1000ms ease-out 200ms both;
   position: unset 1000ms;
+  -webkit-transform: translateX(-4.5rem);
+          transform: translateX(-4.5rem);
 }
 
 main .menu .menu__selection .menu__details .menu__options:hover .fa-check-circle::before {
@@ -1013,6 +967,9 @@ main .button--order {
   main .intro .intro__lieu p {
     font-size: 1.3rem;
     /*to add to font scss*/
+  }
+  main aside {
+    background: white;
   }
   main aside .aside__navigation ol {
     display: -webkit-box;

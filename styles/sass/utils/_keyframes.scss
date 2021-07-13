@@ -50,7 +50,7 @@
 /*Animations for sliding check on*/
 @keyframes translate-left{
     0%{
-        transform:translateX(4.5rem);visibility:visible;
+        transform:translateX(4.5rem);visibility:hidden;
     }
     100%{
         transform:translateX(0);visibility:visible;
@@ -64,23 +64,7 @@
         transform:translateX(-4.5rem);
     }
 }
-/*Animations for disappearing sliding check on ---  usefull to avoid the animation to dispappear in 1 go*/
-@keyframes translate-left-reverse{
-    0%{
-        transform:translateX(0);visibility:visible;
-    }
-    100%{
-        transform:translateX(4.5rem);visibility:visible;
-    }
-}
-@keyframes translate-left-price-reverse{
-    0%{
-        transform:translateX(-4.5rem);
-    }
-    100%{
-        transform:translateX(0);
-    }
-}
+
 /*Animations for rotating check on*/
 @keyframes spin-check {
     0% { transform: rotate(0deg); }
