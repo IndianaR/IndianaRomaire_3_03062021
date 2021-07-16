@@ -70,7 +70,7 @@ main{
             }
         }
         .intro__description{
-            h1{
+            h2{
                 margin:2rem 3.5rem 0.6rem 3.5rem;
             }
             p{
@@ -160,7 +160,7 @@ main{
                     border-radius:15px 15px 0 0;
                     object-fit:cover;
                     height:10.8rem;
-                    width:100%;
+                    min-width:16rem;
                 }
                 .new{
                     position:absolute;
@@ -186,12 +186,14 @@ main{
                         position:absolute;
                     }
                     .fa-inverse{
-                        font-size:1.1rem;
+                        font-size:0;
+                        transition:font-size 800ms;
                     }
                     .fa-heart:hover{
                         font-size:1.63rem;
                         background: -webkit-linear-gradient($color-primary, $color-secondary);
                         -webkit-background-clip: text;
+                        background-clip: text;
                         -webkit-text-fill-color: transparent;
                     }
                 }

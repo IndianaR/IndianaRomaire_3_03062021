@@ -1,14 +1,22 @@
 @media screen and (min-width:1000px)  /* desktop */
 {
-    main{
-        li{
-            font-size:1.2rem;
+    header{
+        h1{
+        font-size:4rem;
         }
-        .picture img{
+    }
+    main{       
+        .picture{
+            max-width:68rem;
+            margin:0 auto;
+            img{
             height:22rem;
+            }
+           
         }
-
         .menu{
+            max-width:68rem;
+            margin:0 auto;
             .menu__selection{
                 flex-direction: row;
                 justify-content: space-between;
@@ -18,19 +26,39 @@
                         min-width:17.5rem;
                         position:relative;
                         .asidesnprice{
+                            p:nth-child(1){
+                                max-width:84%;
+                            }
                             p:nth-child(2){
                                 position:absolute;
                                 right:1rem;
                             }
                         }
                     }
-                }
-                
-            }
-            
+                }                
+            }            
         }
         .button--order{
             width:21%;
         }
+    }   
+    aside{
+        width:58rem;
+        margin:0 auto;
+        
+            h3{
+                max-width:58rem;
+                margin:0.625rem auto;
+                margin-left:1rem;
+            }
+            nav li{
+                font-size:1.2rem;
+            }
     }
+        
+    .restaurants{
+        max-width:60rem;
+        margin:0 auto;
+    }
+    
 }

@@ -31,12 +31,14 @@ main{
                 position:absolute;
             }
             .fa-inverse{
-                font-size:1.1rem;
-            }
+                font-size:0;
+                transition:font-size 800ms;
+            }      
             .fa-heart:hover{
                 font-size:1.6rem;
                 background: -webkit-linear-gradient($color-primary, $color-secondary);
                 -webkit-background-clip: text;
+                background-clip: text;
                 -webkit-text-fill-color: transparent;
             }
         }
