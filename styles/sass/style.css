@@ -625,9 +625,8 @@ main .restaurants .restaurants__list .restaurant_caption img {
   border-radius: 15px 15px 0 0;
   -o-object-fit: cover;
      object-fit: cover;
-  max-height: 10.8rem;
-  -o-object-position: 0 -3.5rem;
-     object-position: 0 -3.5rem;
+  height: 10.8rem;
+  width: 100%;
 }
 
 main .restaurants .restaurants__list .restaurant_caption .new {
