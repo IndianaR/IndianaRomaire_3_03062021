@@ -1027,7 +1027,8 @@ main .button--order {
   }
   main .menu {
     max-width: 68rem;
-    margin: 0 auto;
+    margin-left: auto;
+    margin-right: auto;
   }
   main .menu .menu__selection {
     -webkit-box-orient: horizontal;
